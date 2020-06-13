@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+    overflow-y: hidden;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* the side img section */
+.side-section{
+    background-image: url(../images/Overlay\ and\ img.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 40%;
+}
+.text-side {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0rem, 12.5rem);
+}
+.text-side h1{
+    color: #E4E4E4;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: 7px;
+}
+.text-side span{
+    color: rgba(239, 54, 255, 0.88);
+}
+.text-side p{
+    color: #F1F1F1;
+    font-weight: 400;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 16px;
+    padding-top: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* the layout of both sign in/up sections  */
+section ,.sign-up{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    width: 60%;
+    transition: ease-in 1s;
+}
+section h1{
+    text-align: center;
+    color: #3F3F3F;
+    font-size: 55px;
+    font-weight: 500;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    background-color: #ffffff;
+    box-shadow:-1px 5px 10px rgba(230, 222, 222, 0.74);
+    align-self: center;
+    margin: 3.2rem 0 1rem 1rem;
+    border-top: 4px solid #9152dc;
+}
+section h3{
+    color: #3F3F3F;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 3rem 0 2.5rem 0;
+    align-self: flex-start;
+    margin-left: 3rem;
+}
+.space{
+    margin-bottom: 0.6rem;
+}
+
+/* Form styles for both sign in/up sections */
+form div{
+    transition:all .3s;
+}
+form{
+    width: 70%;
+    margin-right: 1.5rem;
+}
+form div:focus-within{
+    transform: scale(1.05,1.05);
+}
+form .input-label{
+    color:#aaa;
+    display: none;
+    transform: translate(0.7rem,-1.78em);
+    transform-origin:0 0 ;
+    transition:all .3s;
+    opacity: 1;
+}
+input {
+    box-shadow: none;
+    transition:all .2s;
+    padding: 0.3rem 0.4rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #767676;
+    border-bottom: 2px solid #FA0096;
+    box-shadow: 0px 7px 10px rgba(245, 100, 117, 0.349) ;
+}
+
+input:focus + .input-label,
+input:not(:placeholder-shown) + .input-label{
+    display: block;
+    transform: translateY(-4.5em) scale(.8);
+}
+.btn-div{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FA0096;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 2.5rem; 
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    margin: auto;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn:focus{
+    outline: none;
+}
+.btn .icon-right{
+    transform: translateX(10px);
+    transition: all .3s;
+}
+.btn:hover .icon{
+    transform: translateX(1.1rem);
+}
+section p{
+    font-size: 12px;
+    margin: 1rem 1rem 3rem 0;
+    align-self: flex-end;
+}
+
+/* the <a> that navigates through both sections */
+section p .link{
+    color: #FA0096;
+    cursor: pointer;
+    font-size: 17px;
+    margin-left: 0.25rem;
+    padding: 0.2rem 0;
+}
+
+/* sign up section styling  */
+.sign-up{
+    position: absolute;
+    left: 34.1rem;
+    bottom: 43rem;
+}
+.sign-up h1{
+    font-size: 52px;
+}
+.sign-up form{
+    transition: all .7s;
+}
+.sign-up p{
+    margin-bottom: 1rem;
+}
+.display{
+    display: none;
+}
+.icon-left{
+    transform: translateX(-3.4rem);
+    transition: all .3s;
+}
+#backBtn:hover .icon-left{
+    transform: translateX(-3.8rem);
+}
+#backBtn span{
+    transform: translateX(10px);
+}
+.error{
+    color: #dc3545;
+    transform: translateY(-1rem);}
+/* Transition properties when click */
+
+
+/* sign in section */
+.transition-signIn{
+    transform: translateY(999px);
+}
+.transition-signIn-back{
+    transform: translateY(-0px);
+}
+
+/* sign up section */
+.transition-signUp{
+    transform: translateY(37.7rem); 
+}
+.transition-signUp-back{
+    transform: translateY(-37.7rem)
+}
+/* animation between forms in the sign up form  */
+.transition-forms-a{
+  opacity:0;
+}
+.transition-forms-b{
+  opacity: 1;
+}
+@media screen and (max-width:575.98px){
+    body{
+        overflow-y: auto;
+    } 
+    .container{
+        flex-direction: column;
+    }
+    .side-section{
+       width: 100%;
+       background-image: url(../images/mob-picmob-hero-360px.jpg);
+       height: 35vh;
+       z-index: 2;
+    } 
+    .text-side{
+        transform: translate(0 ,2.5rem);
+    }
+    .text-side h1{
+        font-size: 46.5px;
+        letter-spacing: 5px;
+    }
+    .text-side p{
+        font-size: 11.5px;
+        width: 93%;
+    }
+    section,.sign-up{
+        width: 100%;
+    }
+    section h1{
+        font-size: 39.9px;
+    }
+    .box{
+        width: 85%;
+        margin: 2.7rem 0 2rem 0;
+    }
+    section h3{
+        font-size: 17px;
+        margin-left: 2rem;
+    }
+    .btn-div{
+        margin-right: 0.5rem;
+    }
+    .btn{
+        padding: 0.2rem 1.2rem; 
+    }
+    .btn-div .submit {
+        transform: translateX(12px)
+    }
+    section p{
+        font-size: 9px;
+        margin-bottom: 0.7rem;
+    }
+    section p .link{
+        font-size: 14.1px;
+    } 
+     .sign-up{
+         left: 0rem;
+    } 
+    .sign-up h1{
+        font-size: 34px;
+    }
+    .transition-signUp{
+        transform: translateY(30rem);
+           bottom: 30rem; 
+    }
+    .transition-signUp-back{
+        transform: translateY(-29.8rem)
+    }
+    .transition-signIn{
+        transform: rotateX(90deg);
+    }
+
+    .transition-signIn-back{
+        transform: rotateX(0deg);
+    }
+}
+
+
